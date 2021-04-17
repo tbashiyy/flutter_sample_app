@@ -6,10 +6,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Startup Name Generator',
-        theme: ThemeData(primaryColor: Colors.white),
-        home: RandomWords());
+    return MaterialApp(title: 'Startup Name Generator', theme: ThemeData(primaryColor: Colors.white), home: RandomWords());
   }
 }
 
@@ -73,8 +70,7 @@ class _RandomWordsState extends State<RandomWords> {
   }
 
   void _pushSaved() {
-    Navigator.of(context)
-        .push(MaterialPageRoute<void>(builder: (BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute<void>(builder: (BuildContext context) {
       final tiles = _saved.map((WordPair pair) {
         return ListTile(title: Text(pair.asPascalCase, style: _biggerFont));
       });
